@@ -10,7 +10,7 @@ source:
   sha256: fc5db651c65855b553d21ca4de9ac2ce2078e7406b4eff5602d5ae8d0c2ea75d
 
 build:
-  number: 0
+  number: 1  # Increment build number for Conda to detect the change
   skip: true  # [win]
 
 requirements:
@@ -21,9 +21,9 @@ requirements:
     - ninja
   host:
     - libboost-headers
-    - libitk-devel
+    - libitk-devel=5.4.0
   run:
-    - {{ pin_compatible('libitk', min_pin='x.x', max_pin='x.x') }}
+    - libitk=5.4.0
 
 test:
   commands:
